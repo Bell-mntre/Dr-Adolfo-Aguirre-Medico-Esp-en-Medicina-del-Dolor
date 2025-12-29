@@ -1,0 +1,896 @@
+<Dr.AdolfoAguirre.html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Dr. Adolfo Aguirre - Especialista en Medicina Física y Rehabilitación. Tratamiento del dolor musculoesquelético y terapias regenerativas">
+    <meta name="keywords" content="fisiatra, rehabilitación, dolor musculoesquelético, terapias regenerativas, medicina física, Dr. Adolfo Aguirre, dolor cabeza, dolor hombro, dolor codo, mano muñeca, pelvis cadera, rodilla, tobillo pie, espalda, tratamiento dolor, proloterapia, punción seca">
+    <title>Dr. Adolfo Aguirre | Especialista en Medicina Física y Rehabilitación</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>👨‍⚕️</text></svg>">
+    <style>
+        /* ===== VARIABLES Y RESET ===== */
+        :root {
+            --primary: #2c6e9b;
+            --secondary: #34b3b6;
+            --accent: #f47d31;
+            --light: #f8f9fa;
+            --dark: #343a40;
+            --text: #333;
+            --shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f9f9f9;
+            color: var(--text);
+            line-height: 1.6;
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* ===== HEADER Y LOGO ===== */
+        header {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            color: white;
+            padding: 30px 0;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        .header-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+        
+        .profile-img {
+            width: 180px;
+            max-width: 100%;
+            height: auto;
+            border-radius: 50%;
+            object-fit: contain;
+            background: white;
+            padding: 10px;
+            border: 5px solid white;
+            box-shadow: var(--shadow);
+            display: block;
+            margin: 0 auto;
+        }
+        
+        .profile-info {
+            margin-top: 20px;
+        }
+        
+        .profile-info h1 {
+            font-size: 2.1rem;
+            margin-bottom: 8px;
+        }
+        
+        .profile-info h2 {
+            font-size: 1.3rem;
+            font-weight: 400;
+            margin-bottom: 10px;
+            line-height: 1.4;
+        }
+        
+        .matricula {
+            background-color: white;
+            color: var(--primary);
+            padding: 6px 18px;
+            border-radius: 25px;
+            font-weight: bold;
+            display: inline-block;
+            margin-top: 10px;
+            font-size: 1.1rem;
+        }
+
+        /* ===== BOTONERA (MEJORADA PARA MÓVILES) ===== */
+        .symptoms-section {
+            padding: 60px 0 30px 0;
+            background-color: white;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 40px;
+            color: var(--primary);
+            position: relative;
+        }
+        
+        .section-title:after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 4px;
+            background: var(--accent);
+            margin: 15px auto;
+            border-radius: 2px;
+        }
+        
+        /* Responsivo para logo en móviles */
+        @media (max-width: 767px) {
+            .profile-img {
+                max-width: 150px;
+                height: auto;
+            }
+            .profile-info h1 {
+                font-size: 1.8rem;
+            }
+            .profile-info h2 {
+                font-size: 1.1rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .profile-img {
+                max-width: 120px;
+                height: auto;
+            }
+        }
+
+        /* ===== ACORDEÓN PARA TRATAMIENTOS ===== */
+        .accordion {
+            margin-top: 20px;
+        }
+        
+        .accordion-item {
+            background-color: var(--light);
+            border-radius: 8px;
+            margin-bottom: 15px;
+            overflow: hidden;
+            box-shadow: 0 3px 8px rgba(0,0,0,0.05);
+        }
+        
+        .accordion-header {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            color: white;
+            padding: 15px 20px;
+            cursor: pointer;
+            font-weight: 600;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: background 0.3s;
+        }
+        
+        .accordion-header:hover {
+            background: var(--primary);
+        }
+        
+        .accordion-header i {
+            transition: transform 0.3s;
+        }
+        
+        .accordion-header.active i {
+            transform: rotate(180deg);
+        }
+        
+        .accordion-body {
+            padding: 0 20px;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease, padding 0.4s ease;
+            background: white;
+        }
+        
+        .accordion-body.open {
+            padding: 20px;
+            max-height: 1000px; /* suficiente para el contenido */
+        }
+
+        /* Estilos para la sección de contacto */
+        .contact-section {
+            padding: 60px 0;
+            background-color: #f1f8ff;
+        }
+        
+        .contact-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .contact-options {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .contact-card {
+            flex: 1;
+            min-width: 300px;
+            background-color: white;
+            border-radius: 12px;
+            padding: 40px 30px;
+            box-shadow: var(--shadow);
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .contact-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+        }
+        
+        .contact-card.whatsapp {
+            border-top: 5px solid #25D366;
+        }
+        
+        .contact-card.email {
+            border-top: 5px solid var(--accent);
+        }
+        
+        .contact-icon {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+        }
+        
+        .contact-card.whatsapp .contact-icon {
+            color: #25D366;
+        }
+        
+        .contact-card.email .contact-icon {
+            color: var(--accent);
+        }
+        
+        .contact-card h3 {
+            color: var(--primary);
+            margin-bottom: 15px;
+            font-size: 1.8rem;
+        }
+        
+        .contact-card p {
+            margin-bottom: 25px;
+            color: var(--text);
+        }
+        
+        .contact-btn {
+            display: inline-block;
+            padding: 14px 28px;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        .contact-btn.whatsapp {
+            background-color: #25D366;
+            color: white;
+        }
+        
+        .contact-btn.email {
+            background-color: var(--primary);
+            color: white;
+        }
+        
+        .contact-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+        }
+        
+        .contact-btn.whatsapp:hover {
+            background-color: #1da851;
+        }
+        
+        .contact-btn.email:hover {
+            background-color: #1a5d8a;
+        }
+        
+        @media (max-width: 768px) {
+            .contact-options {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .contact-card {
+                width: 100%;
+                max-width: 400px;
+            }
+        }
+
+        /* Resto de estilos (info-section, footer) se mantienen igual */
+        .info-section {
+            padding: 60px 0;
+            background-color: white;
+        }
+        
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+        }
+        
+        .info-card {
+            background-color: var(--light);
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease;
+        }
+        
+        .info-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .info-card h3 {
+            color: var(--primary);
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            font-size: 1.5rem;
+        }
+        
+        .info-card h3 i {
+            margin-right: 12px;
+            color: var(--accent);
+        }
+        
+        footer {
+            background-color: var(--dark);
+            color: white;
+            padding: 40px 0;
+            text-align: center;
+        }
+        
+        .info-list {
+            list-style-type: none;
+            padding-left: 0;
+        }
+        
+        .info-list li {
+            padding: 8px 0;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+            position: relative;
+            padding-left: 20px;
+        }
+        
+        .info-list li:before {
+            content: "•";
+            color: var(--accent);
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <img src="img/logo-dr-aguirre.png" alt="logo Dr. Adolfo Aguirre" class="profile-img">
+                <div class="profile-info">
+                    <h1>Dr. Adolfo Aguirre</h1>
+                    <h2>Especialista en Medicina Física y Rehabilitación<br>Tratamiento del dolor musculoesquelético<br>Terapias regenerativas</h2>
+                    <span class="matricula">MP. 119.128</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section class="symptoms-section">
+        <div class="container">
+            <!-- Definición del dolor (sin cambios) -->
+            <div class="info-card" style="margin-bottom: 40px;">
+                <h3><i class="fas fa-book-medical"></i> Definición de Dolor </h3>
+                <p>El dolor es mucho más que una simple señal de alarma. Según la International Association for the Study of Pain
+ (IASP), se define como: <strong>"una experiencia sensorial y emocional desagradable, 
+                    relacionada con un daño real o potencial en nuestros tejidos."</strong>  
+                    Pero en esencia, el dolor es una experiencia compleja que
+                     entreteje aspectos físicos, neurológicos, emocionales y contextuales únicos en cada persona.Por eso, mi enfoque se aleja de la idea de un tratamiento único y estándar. En su lugar, propongo un camino integral, activo y personalizado, donde el objetivo final no es solo aliviar la molestia, sino recuperar la función, el movimiento pleno y tu autonomía.</p>
+                <p>fuente: https://www.iasp-pain.org/</p>
+                
+                <h4 style="margin-top: 20px; color: var(--primary);">Consideraciones importantes:</h4>
+                <ul class="info-list">
+                    <li>El dolor es una experiencia personal influenciada por factores biológicos, psicológicos y sociales</li>
+                    <li>El dolor y la nocicepción son fenómenos diferentes</li>
+                    <li>El dolor no puede ser inferido solamente por la actividad de las neuronas sensoriales</li>
+                    <li>Las personas aprenden el concepto de dolor a través de las experiencias de vida</li>
+                    <li>Si una persona manifiesta una experiencia dolorosa, ésta debe ser respetada</li>
+                    <li>El dolor usualmente cumple una función adaptativa, pero puede tener efectos adversos</li>
+                    <li>La incapacidad para comunicarse no niega la posibilidad de experimentar dolor</li>
+                </ul>
+            </div>
+
+            <h2 class="section-title">Principales causas asociadas al dolor por segmento corporal</h2>
+            <div class="accordion">
+                <div class="accordion-item">
+                    <div class="accordion-header">
+                        <span>Dolor de cabeza</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="accordion-body">
+                        <p>-	Cefalea tensional
+-	Lesiones tendinosas
+-	Hernias discales cervicales
+-	Fibromialgia
+-	Rectificación cervical<p>
+
+<strong>Posibles Tratamientos: </strong>
+	Proloterapia
+-	Aplicación de toxina botulínica
+-	Inyecciones perineurales subcutáneas con dextrosa
+-	Punción seca
+-	Prescripción de ejercicios para la correcta rehabilitación
+-	Prescripción de medicación en caso de ser necesario
+</p>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <div class="accordion-header">
+                        <span>Dolor de hombro</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="accordion-body">
+                        <p>-	Lesión del manguito rotador 
+-	Tendinitis/tendinosis de la porción larga del bíceps
+-	Artrosis de hombro
+-	Artrosis acromioclavicular
+-	Capsulitis adhesiva / hombro congelado
+-	Lesiones del Labrum
+-	Sindrome miofascial
+-	Bursitis <p>
+
+<strong>Posibles Tratamientos:</strong> 
+	Proloterapia
+-	Inyecciones perineurales subcutáneas con dextrosa
+-	Punción seca
+-	Prescripción de ejercicios para la correcta rehabilitación
+-	Prescripción de medicación en caso de ser necesario
+-	Prescripción de ortesis, férulas, vendajes y su correcta utilización 
+</p>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <div class="accordion-header">
+                        <span>Dolor de codo</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="accordion-body">
+                        <p>-	epicondilitis / epicondilosis  (codo de tenista) 
+-	epitrocleitis / epitrocleosis (codo de golfista) 
+-	Síndromes miofasciales
+-	Artrosis de codo
+-	Bursitis olecraneana
+-	Neuropatías por atrapamiento<p>
+
+<strong>Posibles Tratamientos:</strong> 
+	Proloterapia
+-	Inyecciones perineurales subcutáneas con dextrosa
+-	Hidrodisección neural
+-	Punción seca
+-	Prescripción de ejercicios para la correcta rehabilitación
+-	Prescripción de medicación en caso de ser necesario
+-	Prescripción de ortesis, férulas, vendajes y su correcta utilización 
+</p>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <div class="accordion-header">
+                        <span>Mano y muñeca</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="accordion-body">
+                        <p>-	Túnel del carpo
+-	Artrosis de muñeca
+-	Lesión del ligamento triangular
+-	Rizartrosis / artrosis del pulgar
+-	Tenosinovitis de quervain
+-	Dedo en resorte
+-	Gangliones<p>
+
+ <strong>Posibles Tratamientos: </strong>
+	Proloterapia
+-	Inyecciones perineurales subcutáneas con dextrosa
+-	Hidrodisección neural
+-	Aspiración de quiste ganglionar
+-	Prescripción de ejercicios para la correcta rehabilitación
+-	Prescripción de medicación en caso de ser necesario
+-	Prescripción de ortesis, férulas, vendajes y su correcta utilización 
+
+</p>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <div class="accordion-header">
+                        <span>Dolor de pelvis y cadera</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="accordion-body">
+                        <p>-	Artrosis de cadera
+-	Trocanteritis
+-	Pubalgia
+-	Sindrome piramidal 
+-	Atrapamientos neurales<p>
+
+ <strong>Posibles Tratamientos:</strong> 
+	Proloterapia
+-	Aplicación de ácido hialurónico
+-	Inyecciones perineurales subcutáneas con dextrosa
+-	Hidrodisección neural
+-	Punción seca
+-	Prescripción de ejercicios para la correcta rehabilitación
+-	Prescripción de medicación en caso de ser necesario
+-	Prescripción de ortesis, férulas, vendajes y su correcta utilización 
+</p>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <div class="accordion-header">
+                        <span>Dolor de rodilla</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="accordion-body">
+                        <p>- Tendinitis/tendinosis rotuliana
+- Tendinitis/tendinosis cuadricipital
+- Artrosis de rodilla
+- Condromalacia
+- Síndrome meniscal
+- Esguinces de rodilla
+- Síndrome de la pata de ganso
+- Síndrome de la cintilla iliotibial
+- Periostitis tibial<p>
+
+<strong>Posibles Tratamientos: </strong>
+-	Proloterapia
+-	Aplicación de ácido hialurónico
+-	Inyecciones perineurales subcutáneas con dextrosa
+-	Punción seca
+-	Prescripción de ejercicios para la correcta rehabilitación
+-	Prescripción de medicación en caso de ser necesario
+-	Prescripción de ortesis, férulas, vendajes y su correcta utilización 
+</p>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <div class="accordion-header">
+                        <span>Tobillo y pie</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="accordion-body">
+                        <p>- Esguince de tobillo
+- Tendinitis / tendinosis del aquiles
+- Fascitis plantar
+- Artrosis de tobillo
+- Neuroma de morton
+- Hallux rigidus<p>
+
+<strong>Posibles Tratamientos:</strong>
+	Proloterapia
+-	Aplicación de ácido hialurónico
+-	Inyecciones perineurales subcutáneas con dextrosa
+-	Punción seca
+-	Prescripción de ejercicios para la correcta rehabilitación
+-	Prescripción de medicación en caso de ser necesario
+-	Prescripción de ortesis, férulas, vendajes y su correcta utilización 
+
+</p>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <div class="accordion-header">
+                        <span>Dolor de espalda</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="accordion-body">
+                        <p>- hernias o protrusiones a nivel  cervical, dorsal o lumbar
+- Sindrome miofascial
+- Artrosis de columna vertebral
+- Escoliosis
+- Sacroileítis / sacroileosis
+- Estenosis del canal lumbar
+- Espondilosis / espondilolistesis lumbar <p>
+
+<strong>Posibles Tratamientos:</strong> 
+	Proloterapia
+-	Inyecciones perineurales subcutáneas con dextrosa
+-	Punción seca
+-	Prescripción de ejercicios para la correcta rehabilitación
+-	Prescripción de medicación en caso de ser necesario
+-	Prescripción de ortesis, férulas, vendajes y su correcta utilización
+</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="info-section">
+         <div class="info-card"
+                    <i> <h3>Formacion Academica y Laboral</h3> </i>
+                    <div class="accordion">
+                        <div class="accordion-item">
+                            <div class="accordion-header">
+                                <span>Antecedentes académicos</span>
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                            <div class="accordion-body">
+                                <p><li>❖	Primaria: Escuela Graduada Joaquín V. Gonzales (UNLP) </li> 
+<li>❖	Secundaria: Colegio Nacional Rafael Hernández (UNLP)</li>
+<li>❖	Universidad: Graduado en Facultad de Ciencias Médicas (UNLP)</li>
+<li>❖	Residencia: Medicina Física y Rehabilitación en el HIGA San Martín de La Plata </li>
+<li>❖	Jefatura de residencia: Medicina Física y Rehabilitación HIGA San Martín de La Plata </li>
+<li>❖	Médico de Planta: del HIGA San Martín de La Plata del servicio de Medicina Física y Rehabilitación  (actualidad)</li>
+</p>
+                            </div>
+                        </div>
+
+                        <div class="accordion-item">
+                            <div class="accordion-header">
+                                <span>Antecedentes como médico fisiatra y actualidad laboral</span>
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                            <div class="accordion-body">
+                                <p><li>	Centro ambulatorio de rehabilitación de la clínica ReHabilitar (2025 - actualidad)</li>
+<li>	Director Médico del área de internación de fisiatria en ReHabilitar (marzo 2024 - marzo 2025)</li>
+<li>	HIGA San Martín de La Plata: Médico de planta en el servicio de rehabilitación (desde el 2023 a la actualidad)</li>
+<li>	Consultorio particular NEXO (2023-actualidad)</li>
+<li>	Centro de Rehabilitación ERI (desde julio del 2022 a marzo del 2024)</li>
+<li>	Centro de rehabilitación Fundación Quarello (City Bell diciembre 2021, a enero 2023)</li>
+<li>	Clínica de rehabilitación Dinatos (octubre 2022, a enero 2023)</li>
+<li>	Clínica de rehabilitación: Instituto Rehabilitar (agosto del 2020 a la julio 2022)</li>
+</p>
+                            </div>
+                        </div>
+
+                        <div class="accordion-item">
+                            <div class="accordion-header">
+                                <span>Intervencionismo ecoguiado</span>
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                            <div class="accordion-body">
+                                <p><li>⮚	Curso de postgrado en intervencionismo ecoguiado de miembro superior (Samfyr)</li>
+<li>⮚	Curso de postgrado en intervencionismo ecoguiado de miembro inferior (Samfyr)</li>
+<li>⮚	Curso de postgrado en intervencionismo ecoguiado de raquis y pelvis (Samfyr)</li>
+<li>⮚	Curso de Postgrado en tratamiento de inyecciones perineurales (AAED, Hospital Italiano de CABA)</li>
+<li>⮚	Introducción de la terapia de inyección perineural (LAOM)</li>
+<li>⮚	Curso práctico de intervencionismo fisiátrico ecoguiado (Centro Fintea)</li>
+<li>⮚	Curso de virtual de ecografía básica e intervencionista para la correcta aplicación de BOTOX en pacientes espásticos (Allergan)</li>
+<li>⮚	Bloqueos analgésicos del raquis (SAMFYR)</li>
+<li>⮚	Diplomatura en imágenes musculoesqueléticas (SADPI) </li>
+<li>⮚	Curso Iberoamericano de radiología musculoesquelética (Cirme)</li>
+<li>⮚	Uso de la ecografía para el tratamiento de la espasticidad (SAMFYR)</li>
+<li>⮚	Evaluación funcional de la región lumbopélvica como base para el tratamiento con medicina regenerativa (LAOM)</li>
+<li>⮚	Curso de punción seca y electropunción (Fisioterapia en movimiento)</li>
+</p>
+                            </div>
+                        </div>
+
+                        <div class="accordion-item">
+                            <div class="accordion-header">
+                                <span>Dolor músculo esquelético</span>
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                            <div class="accordion-body">
+                                <p><li>⮚	Postgrado en diagnóstico, tratamiento y rehabilitación del paciente con Dolor osteomioarticular (UNR)</li>
+<li>⮚	Abordaje integral del paciente con dolor lumbar (intramed)</li>
+<li>⮚	Curso de “cambiando paradigmas en dolor” (Intramed)</li>
+<li>⮚	Patologías frecuentes de rodilla en el consultorio (LAOM)</li>
+<li>⮚	Cervicalgia: un síntoma frecuente del que hay que identificar su causa (SAMFYR)</li>
+<li>⮚	Patologías frecuentes de hombro en el consultorio de fisiatría (SAMFYR)</li>
+<li>⮚	Estrategias para evitar el fracaso terapéutico de terapias regenerativas (LAOM)</li>
+<li>⮚	Uso del Cannabis medicinal (Intramed)</li>
+<li>⮚	Curso de “Introducción a cuidados paliativos” (AMA)</li>
+<li>⮚	Espasticidad: protocolo de valoración clínica (Allergan, BOTOX)</li>
+<li>⮚	XXV Congreso argentino de rehabilitación (SAMFYR )</li>
+</p>
+                            </div></div> <div class="accordion-item">
+
+                            <div class="accordion-header">
+                                <span> Medicina del deporte</span>
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                            <div class="accordion-body">
+                                <p><li>⮚	Postgrado en medicina del deporte (CEMDDE)</li>
+<li>⮚	Curso de medicina del deporte y el ejercicio (Circulo medico de Rosario)</li>
+<li>⮚	Curso inicial de traumatología del deporte (AATD)</li>
+<li>⮚	Curso avanzado en médico de equipo (AATD)</li>
+<li>⮚	Curso de vendaje neuromuscular (IDCAR)</li>
+<li>⮚	IX Congreso internacional de preparación física y rendimiento deportivo </li>
+<li>⮚	Curso de “Prescripción racional de la actividad física: el rol del ejercicio en la práctica médica” (Intramed) </li>
+<li>⮚	Suplementación deportiva saludable y ayudas ergogénicas  (Suplementando conciencia)</li>
+</p>
+                            </div>
+                        </div>
+                
+                <!-- SECCIÓN TRATAMIENTOS CON ACORDEÓN -->
+                <div class="info-card">
+                    <h3><i class="fas fa-stethoscope"></i> Tratamientos</h3>
+                    <div class="accordion">
+                        <div class="accordion-item">
+                            <div class="accordion-header">
+                                <span>Ejercicio terapéutico</span>
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                            <div class="accordion-body">
+                                <p>El ejercicio terapéutico es un tratamiento médico individualizado, basado en el movimiento, para reducir el dolor, recuperar la función y prevenir recaídas.<br>
+                                Como médico especialista, evalúo el movimiento y las estructuras alteradas para diseñar un plan de ejercicios específico, progresivo y seguro.<br><br>
+                                El ejercicio produce cambios reales: mejora la calidad muscular, restaura la movilidad, reduce la inflamación, modula el sistema nervioso y disminuye el miedo al movimiento.<br>
+                                Por eso es uno de los tratamientos con mayor evidencia para el dolor.<br><br>
+                                La prescripción médica se diferencia en que implica un diagnóstico funcional, selecciona el tipo de ejercicio adecuado y define su intensidad, volumen y progresión, adaptándose a la evolución del paciente.<br>
+                                El objetivo es rehabilitar, no solo entrenar.<br><br>
+                                Enfoque activo y basado en evidencia: el reposo prolongado no suele ser la solución.<br>
+                                El ejercicio terapéutico correctamente indicado devuelve autonomía, confianza y calidad de vida.</p>
+                            </div>
+                        </div>
+
+                        <div class="accordion-item">
+                            <div class="accordion-header">
+                                <span>Uso de medicación en el tratamiento del dolor</span>
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                            <div class="accordion-body">
+                                <p>La medicación no es un fin, sino una herramienta para facilitar la recuperación. Su objetivo no es "tapar el dolor", sino crear condiciones para que el cuerpo pueda moverse y aprovechar otros tratamientos, como el ejercicio.<br><br>
+                                Usarla de manera racional significa:<br>
+                                - Elegir el fármaco preciso.<br>
+                                - En la dosis mínima eficaz.<br>
+                                - Solo por el tiempo necesario.<br>
+                                - Con un objetivo claro dentro del plan terapéutico.<br><br>
+                                Puede ayudar a:<br>
+                                - Disminuir el dolor para permitir el movimiento.<br>
+                                - Reducir inflamación persistente.<br>
+                                - Mejorar el descanso.<br>
+                                - Facilitar la rehabilitación.<br><br>
+                                Mensaje clave:<br>
+                                El tratamiento no se basa en tomar más medicamentos. La medicación puede ser útil en momentos específicos, pero no reemplaza al movimiento, la rehabilitación ni aborda la causa del dolor. Mi rol es indicarla de manera precisa y temporaria, priorizando un tratamiento integral.</p>
+                            </div>
+                        </div>
+
+                        <div class="accordion-item">
+                            <div class="accordion-header">
+                                <span>Prescripción de ortesis, férulas y vendajes terapéuticos</span>
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                            <div class="accordion-body">
+                                <p>¿Por qué es importante la evaluación por un profesional especialista?<br>
+                                Las ortesis, férulas y vendajes terapéuticos (como el tapping) no son accesorios genéricos. Son herramientas terapéuticas que, cuando están bien indicadas, pueden aliviar el dolor, proteger estructuras y facilitar la recuperación.<br><br>
+                                Cuando se usan sin una evaluación adecuada, pueden resultar ineficaces o incluso prolongar el problema.<br><br>
+                                ¿Para qué sirven estas herramientas dentro del tratamiento del dolor?<br>
+                                Indicadas correctamente, pueden ayudar a:<br>
+                                - Disminuir el dolor al reducir la sobrecarga sobre una estructura lesionada<br>
+                                - Proteger tejidos en fases agudas o postquirúrgicas<br>
+                                - Mejorar la estabilidad articular<br>
+                                - Facilitar el movimiento sin dolor<br>
+                                - Acompañar la rehabilitación sin reemplazarla<br><br>
+                                Su función es acompañar el proceso de recuperación, no inmovilizar innecesariamente ni generar dependencia.</p>
+                            </div>
+                        </div>
+
+                        <div class="accordion-item">
+                            <div class="accordion-header">
+                                <span>Terapias regenerativas en el tratamiento del dolor</span>
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                            <div class="accordion-body">
+                                <p>Son tratamientos que estimulan los propios mecanismos de reparación del cuerpo, buscando mejorar la calidad del tejido lesionado y favorecer una recuperación duradera, no solo aliviar el dolor de forma transitoria.<br><br>
+                                <strong>Proloterapia – una terapia con respaldo científico:</strong><br>
+                                Consiste en inyecciones (habitualmente de dextrosa) aplicadas en tendones, ligamentos o articulaciones para estimular una respuesta reparadora local. Su objetivo no es bloquear el dolor, sino fortalecer y reparar el tejido con el tiempo.<br><br>
+                                <strong>Indicación correcta:</strong><br>
+                                - Evaluar el tipo de dolor y el estado del tejido.<br>
+                                - Definir el momento adecuado.<br>
+                                - Integrarla en un plan terapéutico racional.<br><br>
+                                El objetivo es mejorar la función y reducir el dolor de manera <strong>progresiva y sostenida</strong>, con expectativas realistas integradas en un plan de rehabilitación integral.</p>
+                            </div>
+                        </div>
+
+                        <div class="accordion-item">
+                            <div class="accordion-header">
+                                <span>Inyecciones perineurales con dextrosa al 5% (PIT)</span>
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                            <div class="accordion-body">
+                                <p>La PIT es una técnica que utiliza inyecciones superficiales de <strong>dextrosa al 5%</strong> alrededor de nervios sensitivos irritados. No bloquea el nervio, sino que modula su entorno para disminuir la inflamación local y la hipersensibilidad al dolor.<br><br>
+                                <strong>¿Por qué puede ayudar?</strong><br>
+                                En el dolor persistente, a menudo hay nervios periféricos sensibilizados que transmiten señales de dolor exageradas. La PIT busca:<br>
+                                - Reducir la irritación del nervio.<br>
+                                - Disminuir la sensibilidad al dolor.<br>
+                                - Mejorar la tolerancia al movimiento.<br>
+                                - Facilitar la rehabilitación y el ejercicio terapéutico.<br><br>
+                                <strong>Mensaje importante:</strong><br>
+                                La PIT <strong>no es una "inyección milagrosa"</strong> ni un anestésico fuerte.<br>
+                                Es una técnica segura que se emplea <strong>solo cuando está indicada, en el momento adecuado y como parte de un plan integral</strong>.<br>
+                                El objetivo no es repetir inyecciones indefinidamente, sino usarlas como apoyo dentro de un <strong>tratamiento activo</strong> de recuperación.</p>
+                            </div>
+                        </div>
+
+                       
+                </div>
+                
+                <div class="info-card">
+                    <h3><i class="fas fa-hospital"></i> Consultorio para Atención Particular </h3>
+                    <ul class="info-list">
+                        <li><strong>Consultorios Nexo </strong>Calle 37 entre 28 y 29 </li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECCIÓN DE CONTACTO CON WHATSAPP Y EMAIL -->
+    <section class="contact-section">
+        <div class="container">
+            <h2 class="section-title">Contacto</h2>
+            <div class="contact-container">
+                <div class="contact-options">
+                    <div class="contact-card whatsapp">
+                        <div class="contact-icon">
+                            <i class="fab fa-whatsapp"></i>
+                        </div>
+                        <h3>Consultas y Turnos</h3>
+                        <p>Para solicitar turnos o realizar consultas, puedes contactarme directamente por WhatsApp. Resuelvo tus dudas y coordino una cita en el horario que mejor te convenga.</p>
+                        <a href="https://wa.me/542216557490?text=Hola%20Dr.%20Aguirre,%20me%20gustaría%20solicitar%20un%20turno%20para%20consulta" class="contact-btn whatsapp" target="_blank">
+                            <i class="fab fa-whatsapp"></i> Consultar por WhatsApp
+                        </a>
+                    </div>
+                    
+                    <div class="contact-card email">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <h3>Envío de Estudios</h3>
+                        <p>Si necesitas enviar estudios médicos (radiografías, resonancias, análisis, etc.) para evaluación previa a la consulta, puedes hacerlo directamente a mi correo electrónico.</p>
+                        <a href="mailto:draguirreadolfo@gmail.com?subject=Envío%20de%20estudios%20médicos&body=Adjunto%20mis%20estudios%20para%20evaluación%20previa." class="contact-btn email">
+                            <i class="fas fa-envelope"></i> Enviar estudios por email
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2023 Dr. Adolfo Aguirre - Especialista en Medicina Física y Rehabilitación</p>
+            <p>MP. 119.128 | Todos los derechos reservados © M.B </p>
+            <p style="margin-top: 20px; font-size: 0.9rem; opacity: 0.8;">
+                La información contenida en este sitio web tiene fines educativos y informativos ,no sustituye la consulta médica personalizada.
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        // === SCRIPT PARA EL ACORDEÓN ===
+        document.querySelectorAll('.accordion-header').forEach(header => {
+            header.addEventListener('click', () => {
+                const item = header.parentElement;
+                const body = header.nextElementSibling;
+                const icon = header.querySelector('i');
+                
+                // Cerrar otros abiertos (opcional, puedes quitar si quieres múltiples abiertos)
+                document.querySelectorAll('.accordion-body.open').forEach(openBody => {
+                    if (openBody !== body) {
+                        openBody.classList.remove('open');
+                        openBody.previousElementSibling.querySelector('i').classList.remove('active');
+                    }
+                });
+                
+                // Toggle actual
+                body.classList.toggle('open');
+                icon.classList.toggle('active');
+            });
+        });
+    </script>
+</body>
+</html>
